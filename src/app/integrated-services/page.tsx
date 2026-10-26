@@ -214,8 +214,9 @@ export default function IntegratedServicesPage() {
           <div>
             <p className="lead">
               Our directors lead on health and safety. We provide safe
-              workplaces and plant, train and supervise our people, consult
-              staff and contractors, and review performance regularly.
+              workplaces and safe systems of work, train and supervise our
+              people, consult staff and contractors, and review performance
+              regularly.
             </p>
           </div>
         </div>
