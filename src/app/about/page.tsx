@@ -201,7 +201,7 @@ export default function AboutPage() {
             </p>
           </div>
           <ul className="ruled">
-            <li>Safe workplaces, systems of work and plant</li>
+            <li>Safe workplaces and safe systems of work</li>
             <li>
               Information, instruction, training and supervision for all staff
             </li>
