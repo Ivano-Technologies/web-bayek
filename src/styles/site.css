@@ -336,3 +336,4 @@ button.btn:disabled{opacity:.65;cursor:wait}
 .form-status.ok{color:var(--grey-900)}
 .form-status.err{color:var(--con-red)}
 .not-found .actions{display:flex;gap:var(--s-4);flex-wrap:wrap;margin-top:var(--s-7)}
+.not-found .display{max-width:10em;text-wrap:balance}
