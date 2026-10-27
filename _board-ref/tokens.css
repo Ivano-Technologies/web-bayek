@@ -1,0 +1,53 @@
+/* Bayek design tokens. Montserrat only. Bright brand colours are for fills, rules and the E; never body or small text. */
+:root{
+  /* Group neutrals */
+  --ink:#201C1C;          /* 15.9:1 on base */
+  --base:#FAF8F6;         /* warm white page */
+  --paper:#FFFFFF;
+  --grey-900:#3A3434;
+  --grey-700:#5E5858;     /* 6.6:1 on base, body secondary */
+  --grey-600:#6B6565;     /* 5.4:1 on base, smallest text allowed */
+  --grey-400:#8A8484;     /* 3.5:1, decorative and large text only */
+  --grey-200:#E8E4E0;     /* rules, borders */
+  --grey-100:#F1EEEB;     /* tinted panels */
+  --ribbon-pink:#F9DED7;
+  --ribbon-mauve:#D6C5C7;
+  --ribbon-grey:#F1F2F2;
+
+  /* Integrated Services */
+  --int-e:#50BD36;        /* 2.4:1 on white: fills, rules, the E only */
+  --int-teal:#41C1BA;     /* 2.2:1 on white: fills only */
+  --int-green-text:#2F7A1F; /* 5.3:1 on white */
+  --int-teal-text:#1A7A74;  /* 5.2:1 on white; white text on it 5.2:1 */
+  --int-tint:#EAF6F5;
+
+  /* Construction */
+  --con-e:#FD7306;        /* 2.8:1 on white: fills, rules, the E only; ink on it 6.1:1 */
+  --con-clay:#C65F45;     /* 4.1:1: blocks; white text on it only at 24px+ */
+  --con-red:#983131;      /* 7.5:1 on white; white text on it 7.5:1 */
+  --con-orange-text:#B34700; /* 5.5:1 on white */
+  --con-tint:#F8ECE7;
+
+  /* Type: Montserrat only */
+  --font:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --fs-display:clamp(2.75rem,1.6rem + 5vw,6rem);   /* 44 to 96 */
+  --fs-h1:clamp(2.25rem,1.6rem + 2.8vw,4rem);      /* 36 to 64 */
+  --fs-h2:clamp(1.75rem,1.4rem + 1.5vw,2.75rem);   /* 28 to 44 */
+  --fs-h3:clamp(1.25rem,1.1rem + .6vw,1.625rem);   /* 20 to 26 */
+  --fs-lead:clamp(1.125rem,1rem + .45vw,1.375rem); /* 18 to 22 */
+  --fs-body:1.0625rem;  /* 17 */
+  --fs-small:.875rem;   /* 14 */
+  --fs-eyebrow:.75rem;  /* 12, caps */
+  --ls-eyebrow:.28em;
+  --ls-display:-.025em;
+  --lh-tight:1.04;
+  --lh-head:1.15;
+  --lh-body:1.65;
+  --w-light:300; --w-reg:400; --w-med:500; --w-semi:600; --w-bold:700;
+
+  /* Space and layout */
+  --s-1:.25rem; --s-2:.5rem; --s-3:.75rem; --s-4:1rem; --s-5:1.5rem; --s-6:2rem; --s-7:3rem; --s-8:4rem; --s-9:6rem; --s-10:8rem;
+  --gutter:clamp(1.25rem,4vw,3.5rem);
+  --max:1240px;
+  --radius:0;
+}
