@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BayekLoop } from "@/components/bayek-loop";
 import { SiteShell } from "@/components/site-shell";
 import { ContactForm } from "./contact-form";
 
@@ -9,20 +10,9 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <SiteShell theme="group" brand="group" current="contact">
-      <section className="hero" style={{ paddingBottom: "var(--s-8)" }}>
-        <div
-          className="ribbon rib-top"
-          style={{
-            right: -30,
-            top: -160,
-            width: 220,
-            height: 560,
-            opacity: 0.8,
-          }}
-        >
-          <img src="/assets/ribbon.svg" alt="" />
-        </div>
+    <SiteShell theme="base" brand="base" current="contact">
+      <section className="hero contact-hero" style={{ paddingBottom: "var(--s-8)" }}>
+        <BayekLoop className="loop-cover" />
         <div className="wrap">
           <p className="eyebrow">Contact</p>
           <h1 className="display" style={{ maxWidth: "11em" }}>
@@ -37,7 +27,7 @@ export default function ContactPage() {
 
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="wrap">
-          <div className="group-contact">
+          <div className="contact-general">
             <div>
               <p className="eyebrow">General enquiries</p>
               <p className="big-mail">
@@ -46,11 +36,7 @@ export default function ContactPage() {
             </div>
             <div>
               <p className="eyebrow">Office</p>
-              <p>
-                36 Kumasi Crescent
-                <br />
-                Wuse 2, Abuja
-              </p>
+              <p>Saham Plaza, Wuse II, Abuja</p>
             </div>
           </div>
         </div>

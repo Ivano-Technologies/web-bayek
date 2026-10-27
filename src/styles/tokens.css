@@ -1,6 +1,6 @@
 /* Bayek design tokens. Montserrat only. Bright brand colours are for fills, rules and the E; never body or small text. */
 :root{
-  /* Group neutrals */
+  /* Neutrals */
   --ink:#201C1C;          /* 15.9:1 on base */
   --base:#FAF8F6;         /* warm white page */
   --paper:#FFFFFF;
@@ -27,6 +27,33 @@
   --con-red:#983131;      /* 7.5:1 on white; white text on it 7.5:1 */
   --con-orange-text:#B34700; /* 5.5:1 on white */
   --con-tint:#F8ECE7;
+
+  /* Profile motifs (27 Oct 10:39). Cover ribbon = the swoosh on the right of the v2 profile covers (profiles/v2/assets/ribbon-cover.svg).
+     Warm ink gradient = v2 back page overlay (v2.css .back .bg::after), base #1F1C19, no pink. */
+  --bayek-ink:#1F1C19;
+  --bayek-ink-rgb:31,28,25;
+  --bayek-gradient-ink:linear-gradient(to bottom,rgba(31,28,25,.35) 0%,rgba(31,28,25,.2) 40%,rgba(31,28,25,.92) 68%,#1F1C19 100%);
+  --bayek-ribbon-src:url("/assets/bayek-loop.svg");          /* cover colours, light sections */
+  --bayek-ribbon-grey-src:url("/assets/bayek-loop-grey.svg"); /* grey only, dark ink bands */
+  --bayek-ribbon-path:"/assets/bayek-loop.svg";
+  --bayek-ribbon-grey-path:"/assets/bayek-loop-grey.svg";
+  --bayek-ribbon-loop:#F1F2F2;     /* main loop band, light grey */
+  --bayek-ribbon-mauve:#D6C5C7;    /* top band start, sweep end */
+  --bayek-ribbon-blush:#F6D3D0;    /* top band end */
+  --bayek-ribbon-pink:#F9DED7;     /* sweep start (fades in from 0 to .9 at 45%) */
+  --bayek-ribbon-rose:#E9CFCB;     /* sweep mid, 65% */
+  --bayek-ribbon-band-top:linear-gradient(to right,#D6C5C7,#F6D3D0);
+  --bayek-ribbon-band-sweep:linear-gradient(to top right,rgba(249,222,215,0) 0%,rgba(249,222,215,.9) 45%,#E9CFCB 65%,#D6C5C7 100%);
+  --bayek-ribbon-grey-loop:#F1F2F2;
+  --bayek-ribbon-grey-band-top:linear-gradient(to right,#C9CACB,#E4E5E6);
+  --bayek-ribbon-grey-band-sweep:linear-gradient(to top right,rgba(228,229,230,0) 0%,rgba(228,229,230,.9) 45%,#D6D7D8 65%,#C9CACB 100%);
+  --bayek-ribbon-opacity-light:1;  /* cover colours as on the cover */
+  --bayek-ribbon-opacity-ink:.13;  /* low contrast on the ink gradient (footer) */
+  --bayek-ribbon-hero-path:"/assets/bayek-loop-hero.svg";   /* Home hero: top band in colour, rest grey (10:46) */
+  --bayek-ribbon-hero-src:url("/assets/bayek-loop-hero.svg");
+  --bayek-ribbon-hero-band-top:linear-gradient(to right,#D6C5C7 0%,#F9DED7 55%,#F6D3D0 100%);
+  --bayek-ribbon-opacity-hero-top:.7;  /* baked into bayek-loop-hero.svg */
+  --bayek-ribbon-opacity-hero-grey:.26; /* baked into bayek-loop-hero.svg */
 
   /* Type: Montserrat only */
   --font:var(--font-montserrat),"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;

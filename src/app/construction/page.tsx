@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BayekLoop } from "@/components/bayek-loop";
 import { SiteShell } from "@/components/site-shell";
 
 export const metadata: Metadata = {
@@ -12,6 +13,7 @@ export default function ConstructionPage() {
   return (
     <SiteShell theme="con" brand="construction" current="construction">
       <section className="con-hero">
+        <BayekLoop className="loop-cover" />
         <div className="wrap grid">
           <div>
             <p className="eyebrow c">Bayek Construction</p>
@@ -221,9 +223,11 @@ export default function ConstructionPage() {
               <a href="mailto:construction@bayek.org">construction@bayek.org</a>
             </p>
           </div>
-          <Link className="btn on-dark" href="/contact">
-            Contact Construction
-          </Link>
+          <div className="cta-acts">
+            <Link className="btn on-dark" href="/contact">
+              Contact Construction
+            </Link>
+          </div>
         </div>
       </section>
     </SiteShell>

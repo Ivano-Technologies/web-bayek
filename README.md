@@ -1,16 +1,17 @@
 # web-bayek
 
-Public site for [bayek.org](https://bayek.org), the Bayek group website (an Ivano Technologies affiliate).
+Public site for [bayek.org](https://bayek.org).
 
-Bayek Integrated Services and Bayek Construction. Pages follow the locked brand board (26 Oct 2026).
+Bayek Integrated Services Ltd and Bayek Construction, two Abuja companies.
 
 ## Pages
 
-- `/` Group home
-- `/about` About the group
+- `/` Home
 - `/integrated-services` Bayek Integrated Services
 - `/construction` Bayek Construction
 - `/contact` Contact and enquiry form
+
+`/about` permanently redirects to `/`.
 
 ## Stack
 
@@ -55,7 +56,5 @@ Server-only, by `topic`:
 ## Notes
 
 - Integrated Services uses teal only. Green appears only in the wordmark E.
-- The ribbon is on group pages only (Home, About, Contact).
 - The street address is on the Contact page only.
 - No phone numbers, `tel:` links or phone fields.
-- Footer line: An Ivano Technologies affiliate.
