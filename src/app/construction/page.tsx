@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BayekLoop } from "@/components/bayek-loop";
 import { SiteShell } from "@/components/site-shell";
+import { pageMetadata } from "@/lib/page-meta";
 
-export const metadata: Metadata = {
-  title: "Bayek Construction",
+export const metadata: Metadata = pageMetadata({
+  path: "/construction",
+  title: "Bayek Construction | From design to completion",
   description:
-    "Bayek Construction: architecture, project management, construction and electrical installations.",
-};
+    "Bayek Construction provides architectural, engineering and project management services shaped around each client's needs, delivered by a team that also builds.",
+});
 
 export default function ConstructionPage() {
   return (
