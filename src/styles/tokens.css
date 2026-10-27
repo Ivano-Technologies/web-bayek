@@ -1,6 +1,6 @@
 /* Bayek design tokens. Montserrat only. Bright brand colours are for fills, rules and the E; never body or small text. */
 :root{
-  /* Group neutrals */
+  /* Page neutrals */
   --ink:#201C1C;          /* 15.9:1 on base */
   --base:#FAF8F6;         /* warm white page */
   --paper:#FFFFFF;

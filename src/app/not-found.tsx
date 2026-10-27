@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <SiteShell theme="group" brand="group">
+    <SiteShell theme="base" brand="base">
       <section className="hero not-found">
         <div className="wrap">
           <p className="eyebrow">Page not found</p>

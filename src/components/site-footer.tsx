@@ -4,38 +4,40 @@ export function SiteFooter() {
   return (
     <footer className="site-foot">
       <div className="wrap">
+        <img className="foot-mark" src="/assets/mark-bayek.svg" alt="Bayek" />
         <div className="foot-grid">
-          <div>
-            <img src="/assets/wordmark-group.svg" alt="Bayek" />
-            <p className="small muted" style={{ marginTop: "1.25rem", maxWidth: "26em" }}>
-              Integrated services, supply and construction, from Abuja.
-            </p>
-          </div>
-          <div>
-            <h4>Companies</h4>
+          <div className="foot-co int">
+            <h4>
+              <Link href="/integrated-services">Bayek Integrated Services Ltd</Link>
+            </h4>
             <ul>
               <li>
-                <Link href="/integrated-services">Bayek Integrated Services Ltd</Link>
+                <a href="mailto:services@bayek.org">services@bayek.org</a>
               </li>
               <li>
-                <Link href="/construction">Bayek Construction</Link>
-              </li>
-              <li>
-                <Link href="/about">About Bayek</Link>
+                <Link href="/integrated-services">Integrated Services</Link>
               </li>
             </ul>
           </div>
-          <div>
-            <h4>Contact</h4>
+          <div className="foot-co con">
+            <h4>
+              <Link href="/construction">Bayek Construction</Link>
+            </h4>
             <ul>
               <li>
-                <a href="mailto:hi@bayek.org">hi@bayek.org</a>
+                <a href="mailto:construction@bayek.org">construction@bayek.org</a>
               </li>
               <li>
-                <Link href="/contact">All contact details</Link>
+                <Link href="/construction">Construction</Link>
               </li>
             </ul>
           </div>
+        </div>
+        <div className="foot-base">
+          <span>
+            General enquiries <a href="mailto:hi@bayek.org">hi@bayek.org</a>
+          </span>
+          <Link href="/contact">Contact</Link>
         </div>
       </div>
     </footer>

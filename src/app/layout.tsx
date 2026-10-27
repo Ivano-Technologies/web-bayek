@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     template: "%s",
   },
   description:
-    "Bayek Integrated Services and Bayek Construction.",
+    "Bayek Integrated Services Ltd and Bayek Construction, two Abuja companies.",
   applicationName: "Bayek",
   openGraph: {
     type: "website",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     url: "https://bayek.org",
     title: "Bayek",
     description:
-      "Bayek Integrated Services and Bayek Construction.",
+      "Bayek Integrated Services Ltd and Bayek Construction, two Abuja companies.",
   },
 };
 

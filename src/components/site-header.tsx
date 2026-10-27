@@ -1,16 +1,18 @@
 import Link from "next/link";
 
-export type Brand = "group" | "integrated" | "construction";
-export type NavId = "about" | "integrated-services" | "construction" | "contact";
+export type Brand = "base" | "integrated" | "construction";
+export type NavId = "integrated-services" | "construction" | "contact";
 
-const WORDMARK: Record<Brand, { src: string; alt: string }> = {
-  group: { src: "/assets/wordmark-group.svg", alt: "Bayek home" },
+const WORDMARK: Record<
+  Brand,
+  { src: string; alt: string; markOnly?: boolean }
+> = {
+  base: { src: "/assets/mark-bayek.svg", alt: "Bayek home", markOnly: true },
   integrated: { src: "/assets/wordmark-integrated.svg", alt: "Bayek home" },
   construction: { src: "/assets/wordmark-construction.svg", alt: "Bayek home" },
 };
 
 const NAV: { href: string; id: NavId; label: string }[] = [
-  { href: "/about", id: "about", label: "About Bayek" },
   {
     href: "/integrated-services",
     id: "integrated-services",
@@ -33,7 +35,11 @@ export function SiteHeader({
     <header className="site-head">
       <div className="wrap">
         <Link className="brand" href="/">
-          <img src={mark.src} alt={mark.alt} />
+          <img
+            className={mark.markOnly ? "mark-only" : undefined}
+            src={mark.src}
+            alt={mark.alt}
+          />
         </Link>
         <nav aria-label="Main">
           <ul className="nav">

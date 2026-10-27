@@ -9,20 +9,8 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <SiteShell theme="group" brand="group" current="contact">
+    <SiteShell theme="base" brand="base" current="contact">
       <section className="hero" style={{ paddingBottom: "var(--s-8)" }}>
-        <div
-          className="ribbon rib-top"
-          style={{
-            right: -30,
-            top: -160,
-            width: 220,
-            height: 560,
-            opacity: 0.8,
-          }}
-        >
-          <img src="/assets/ribbon.svg" alt="" />
-        </div>
         <div className="wrap">
           <p className="eyebrow">Contact</p>
           <h1 className="display" style={{ maxWidth: "11em" }}>
@@ -37,7 +25,7 @@ export default function ContactPage() {
 
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="wrap">
-          <div className="group-contact">
+          <div className="contact-general">
             <div>
               <p className="eyebrow">General enquiries</p>
               <p className="big-mail">
