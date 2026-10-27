@@ -36,7 +36,7 @@ export default function ContactPage() {
             </div>
             <div>
               <p className="eyebrow">Office</p>
-              <p>Shop B18, Saham Plaza, Wuse II, Abuja</p>
+              <p>Saham Plaza, Wuse II, Abuja</p>
             </div>
           </div>
         </div>
