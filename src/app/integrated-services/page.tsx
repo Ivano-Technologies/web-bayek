@@ -13,7 +13,7 @@ export default function IntegratedServicesPage() {
   return (
     <SiteShell theme="int" brand="integrated" current="integrated-services">
       <section className="int-hero">
-        <BayekLoop className="loop-tint" />
+        <BayekLoop className="loop-cover" />
         <div className="wrap grid">
           <div className="text">
             <p className="eyebrow c">Bayek Integrated Services Ltd</p>

@@ -13,7 +13,7 @@ export default function ConstructionPage() {
   return (
     <SiteShell theme="con" brand="construction" current="construction">
       <section className="con-hero">
-        <BayekLoop className="loop-tint" />
+        <BayekLoop className="loop-cover" />
         <div className="wrap grid">
           <div>
             <p className="eyebrow c">Bayek Construction</p>

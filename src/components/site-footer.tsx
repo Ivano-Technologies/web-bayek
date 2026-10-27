@@ -4,7 +4,7 @@ import { BayekLoop } from "@/components/bayek-loop";
 export function SiteFooter() {
   return (
     <footer className="site-foot ink-band">
-      <BayekLoop className="loop-foot" />
+      <BayekLoop className="loop-foot" variant="grey" />
       <div className="wrap">
         <img className="foot-mark" src="/assets/mark-bayek-white.svg" alt="Bayek" />
         <div className="foot-grid">

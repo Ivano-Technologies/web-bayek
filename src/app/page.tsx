@@ -16,7 +16,7 @@ export default function HomePage() {
   return (
     <SiteShell theme="base" brand="base">
       <section className="home-hero ink-band">
-        <BayekLoop className="loop-hero" />
+        <BayekLoop className="loop-hero" variant="hero" />
         <div className="wrap">
           <h1 className="home-line">
             Contracts, supply, design and construction, delivered from Abuja.

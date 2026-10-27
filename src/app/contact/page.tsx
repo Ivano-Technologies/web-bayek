@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BayekLoop } from "@/components/bayek-loop";
 import { SiteShell } from "@/components/site-shell";
 import { ContactForm } from "./contact-form";
 
@@ -10,7 +11,8 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <SiteShell theme="base" brand="base" current="contact">
-      <section className="hero" style={{ paddingBottom: "var(--s-8)" }}>
+      <section className="hero contact-hero" style={{ paddingBottom: "var(--s-8)" }}>
+        <BayekLoop className="loop-cover" />
         <div className="wrap">
           <p className="eyebrow">Contact</p>
           <h1 className="display" style={{ maxWidth: "11em" }}>
