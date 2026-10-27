@@ -3,12 +3,12 @@ import Link from "next/link";
 import { SiteShell } from "@/components/site-shell";
 
 export const metadata: Metadata = {
-  title: "Page not found | Bayek Group",
+  title: "Page not found | Bayek",
 };
 
 export default function NotFound() {
   return (
-    <SiteShell theme="group" brand="group">
+    <SiteShell theme="base" brand="base">
       <section className="hero not-found">
         <div className="wrap">
           <p className="eyebrow">Page not found</p>

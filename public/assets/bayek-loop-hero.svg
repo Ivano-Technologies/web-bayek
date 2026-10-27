@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 1000" preserveAspectRatio="xMaxYMid meet" aria-hidden="true" focusable="false">
+  <!-- Bayek cover ribbon, Home hero variant (27 Oct 10:46). Same geometry as assets/bayek-loop.svg (v2 ribbon-cover.svg).
+       Top band in its cover colours (mauve to blush); loop and sweep in neutral greys. Part opacities are baked in
+       (top band .7, grey parts .26) and recorded in tokens.css as bayek-ribbon-opacity-hero-top and bayek-ribbon-opacity-hero-grey. -->
+  <defs>
+    <linearGradient id="bkh-rt" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#D6C5C7"/>
+      <stop offset=".55" stop-color="#F9DED7"/>
+      <stop offset="1" stop-color="#F6D3D0"/>
+    </linearGradient>
+    <linearGradient id="bkh-rp" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#E4E5E6" stop-opacity="0"/><stop offset=".45" stop-color="#E4E5E6" stop-opacity=".9"/>
+      <stop offset=".65" stop-color="#D6D7D8"/>
+      <stop offset="1" stop-color="#C9CACB"/>
+    </linearGradient>
+  </defs>
+  <g opacity=".26">
+    <path fill="#F1F2F2" d="M300 40 C170 150 190 330 290 450 C390 570 370 760 120 1000 L250 1000 C470 780 470 560 380 440 C290 320 280 170 400 90 L400 40 Z"/>
+    <path fill="url(#bkh-rp)" d="M0 760 C110 610 250 500 400 400 L400 300 C260 380 110 520 0 650 Z"/>
+  </g>
+  <path opacity=".7" fill="url(#bkh-rt)" d="M400 0 L400 40 C300 40 220 90 190 200 C160 120 190 40 260 0 Z"/>
+</svg>

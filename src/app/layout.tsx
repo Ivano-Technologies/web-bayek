@@ -12,20 +12,20 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   metadataBase: new URL("https://bayek.org"),
   title: {
-    default: "Bayek Group",
+    default: "Bayek",
     template: "%s",
   },
   description:
-    "Bayek brings together Bayek Integrated Services and Bayek Construction.",
-  applicationName: "Bayek Group",
+    "Bayek is an Abuja business covering contracts and supply, and design and construction, for clients across Nigeria.",
+  applicationName: "Bayek",
   openGraph: {
     type: "website",
     locale: "en_NG",
-    siteName: "Bayek Group",
+    siteName: "Bayek",
     url: "https://bayek.org",
-    title: "Bayek Group",
+    title: "Bayek",
     description:
-      "Bayek brings together Bayek Integrated Services and Bayek Construction.",
+      "Bayek is an Abuja business covering contracts and supply, and design and construction, for clients across Nigeria.",
   },
 };
 
