@@ -5,7 +5,7 @@ import {
   type NavId,
 } from "@/components/site-header";
 
-type Theme = "group" | "int" | "con";
+type Theme = "base" | "int" | "con";
 
 export function SiteShell({
   theme,
