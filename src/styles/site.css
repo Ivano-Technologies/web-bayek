@@ -41,7 +41,6 @@ p+p{margin-top:1em}
 .foot-grid ul{list-style:none;font-size:var(--fs-small);line-height:2}
 .foot-grid a{text-decoration:none}
 .foot-grid a:hover{text-decoration:underline}
-.affiliate{margin-top:var(--s-8);padding-top:var(--s-5);border-top:1px solid var(--grey-200);font-size:.8125rem;color:var(--grey-600);display:flex;justify-content:space-between;gap:var(--s-4);flex-wrap:wrap}
 
 /* sections */
 .section{padding:var(--s-10) 0}

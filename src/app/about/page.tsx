@@ -3,8 +3,8 @@ import Link from "next/link";
 import { SiteShell } from "@/components/site-shell";
 
 export const metadata: Metadata = {
-  title: "About the group | Bayek",
-  description: "About the Bayek group.",
+  title: "About Bayek",
+  description: "About Bayek Integrated Services and Bayek Construction.",
 };
 
 export default function AboutPage() {
@@ -24,14 +24,13 @@ export default function AboutPage() {
           <img src="/assets/ribbon.svg" alt="" />
         </div>
         <div className="wrap">
-          <p className="eyebrow">About the group</p>
+          <p className="eyebrow">About Bayek</p>
           <h1 className="display" style={{ maxWidth: "12em" }}>
             Two companies, one standard of work.
           </h1>
           <p className="lead" style={{ maxWidth: "38em" }}>
-            Bayek brings two companies together so clients can work with one
-            group: contracts and supply on one side, design and construction on
-            the other.
+            Bayek Integrated Services handles contracts and supply. Bayek
+            Construction handles design and construction.
           </p>
         </div>
       </section>
@@ -215,7 +214,6 @@ export default function AboutPage() {
       <section className="cta">
         <div className="wrap">
           <div>
-            <p className="eyebrow">Bayek Group</p>
             <h2>Talk to the team that fits your project.</h2>
             <p className="cta-mail">
               General enquiries <a href="mailto:hi@bayek.org">hi@bayek.org</a>

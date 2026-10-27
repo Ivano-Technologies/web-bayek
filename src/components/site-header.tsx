@@ -10,7 +10,7 @@ const WORDMARK: Record<Brand, { src: string; alt: string }> = {
 };
 
 const NAV: { href: string; id: NavId; label: string }[] = [
-  { href: "/about", id: "about", label: "About the group" },
+  { href: "/about", id: "about", label: "About Bayek" },
   {
     href: "/integrated-services",
     id: "integrated-services",

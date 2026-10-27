@@ -6,7 +6,7 @@ export function SiteFooter() {
       <div className="wrap">
         <div className="foot-grid">
           <div>
-            <img src="/assets/wordmark-group.svg" alt="Bayek Group" />
+            <img src="/assets/wordmark-group.svg" alt="Bayek" />
             <p className="small muted" style={{ marginTop: "1.25rem", maxWidth: "26em" }}>
               Integrated services, supply and construction, from Abuja.
             </p>
@@ -21,7 +21,7 @@ export function SiteFooter() {
                 <Link href="/construction">Bayek Construction</Link>
               </li>
               <li>
-                <Link href="/about">About the group</Link>
+                <Link href="/about">About Bayek</Link>
               </li>
             </ul>
           </div>
@@ -36,10 +36,6 @@ export function SiteFooter() {
               </li>
             </ul>
           </div>
-        </div>
-        <div className="affiliate">
-          <span>An Ivano Technologies affiliate</span>
-          <span>Bayek Group</span>
         </div>
       </div>
     </footer>

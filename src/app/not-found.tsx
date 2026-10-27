@@ -3,7 +3,7 @@ import Link from "next/link";
 import { SiteShell } from "@/components/site-shell";
 
 export const metadata: Metadata = {
-  title: "Page not found | Bayek Group",
+  title: "Page not found | Bayek",
 };
 
 export default function NotFound() {

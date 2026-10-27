@@ -3,7 +3,7 @@ import Link from "next/link";
 import { SiteShell } from "@/components/site-shell";
 
 export const metadata: Metadata = {
-  title: "Bayek Group",
+  title: "Bayek",
   description:
     "Bayek brings together Bayek Integrated Services and Bayek Construction.",
 };
@@ -26,7 +26,6 @@ export default function HomePage() {
         </div>
         <div className="wrap hero-grid">
           <div>
-            <p className="eyebrow">Bayek Group</p>
             <h1 className="display">Supply, build and deliver, under one name.</h1>
             <p className="lead">
               Bayek brings together two companies. Bayek Integrated Services
