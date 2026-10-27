@@ -2,15 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BayekLoop } from "@/components/bayek-loop";
 import { SiteShell } from "@/components/site-shell";
+import { pageMetadata } from "@/lib/page-meta";
 
 const DESCRIPTION =
   "Bayek is an Abuja business covering contracts and supply, and design and construction, for clients across Nigeria.";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: "/",
   title: "Bayek",
   description: DESCRIPTION,
-  openGraph: { title: "Bayek", description: DESCRIPTION },
-};
+});
 
 export default function HomePage() {
   return (

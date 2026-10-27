@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BayekLoop } from "@/components/bayek-loop";
 import { SiteShell } from "@/components/site-shell";
+import { pageMetadata } from "@/lib/page-meta";
 
-export const metadata: Metadata = {
-  title: "Bayek Integrated Services",
+export const metadata: Metadata = pageMetadata({
+  path: "/integrated-services",
+  title: "Bayek Integrated Services | Printing, contracts, trade and supply",
   description:
-    "Bayek Integrated Services Ltd: printing and corporate stationery, contracts, trading, logistics, procurement and supply.",
-};
+    "Bayek Integrated Services Ltd provides printing and corporate stationery, general contracts and logistics, and the supply of medical, IT and power equipment for clients across Nigeria.",
+});
 
 export default function IntegratedServicesPage() {
   return (

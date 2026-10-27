@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 import { BayekLoop } from "@/components/bayek-loop";
 import { SiteShell } from "@/components/site-shell";
+import { pageMetadata } from "@/lib/page-meta";
 import { ContactForm } from "./contact-form";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  path: "/contact",
   title: "Contact | Bayek",
-  description: "Contact Bayek Integrated Services and Bayek Construction.",
-};
+  description:
+    "Start with a conversation. Tell us about the goods, service or project you have in mind and we will put you in touch with the right team at Bayek Integrated Services or Bayek Construction.",
+});
 
 export default function ContactPage() {
   return (
