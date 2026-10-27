@@ -1,10 +1,12 @@
 import Link from "next/link";
+import { BayekLoop } from "@/components/bayek-loop";
 
 export function SiteFooter() {
   return (
-    <footer className="site-foot">
+    <footer className="site-foot ink-band">
+      <BayekLoop className="loop-foot" />
       <div className="wrap">
-        <img className="foot-mark" src="/assets/mark-bayek.svg" alt="Bayek" />
+        <img className="foot-mark" src="/assets/mark-bayek-white.svg" alt="Bayek" />
         <div className="foot-grid">
           <div className="foot-co int">
             <h4>

@@ -34,11 +34,7 @@ export default function ContactPage() {
             </div>
             <div>
               <p className="eyebrow">Office</p>
-              <p>
-                36 Kumasi Crescent
-                <br />
-                Wuse 2, Abuja
-              </p>
+              <p>Shop B18, Saham Plaza, Wuse II, Abuja</p>
             </div>
           </div>
         </div>
