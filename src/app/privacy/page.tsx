@@ -55,36 +55,36 @@ export default function PrivacyPage() {
                 </thead>
                 <tbody>
                   <tr>
-                    <td>
+                    <td data-label="What">
                       Topic, name, organisation (optional), email address and
                       message
                     </td>
-                    <td>When you send the contact form</td>
-                    <td>
+                    <td data-label="When">When you send the contact form</td>
+                    <td data-label="Why">
                       To pass your message to the right team and reply to you
                     </td>
-                    <td>
+                    <td data-label="Lawful basis">
                       Our legitimate interest in answering enquiries, or steps
                       you ask us to take before a contract
                     </td>
                   </tr>
                   <tr>
-                    <td>
+                    <td data-label="What">
                       Anything you send by email to services@, construction@ or
                       hi@bayek.org
                     </td>
-                    <td>When you email us</td>
-                    <td>The same</td>
-                    <td>The same</td>
+                    <td data-label="When">When you email us</td>
+                    <td data-label="Why">The same</td>
+                    <td data-label="Lawful basis">The same</td>
                   </tr>
                   <tr>
-                    <td>
+                    <td data-label="What">
                       Technical data such as IP address, browser type and the
                       page requested
                     </td>
-                    <td>Every visit, in our hosting provider&apos;s server logs</td>
-                    <td>To keep the site running and secure, and to block spam</td>
-                    <td>Our legitimate interest in running a secure website</td>
+                    <td data-label="When">Every visit, in our hosting provider&apos;s server logs</td>
+                    <td data-label="Why">To keep the site running and secure, and to block spam</td>
+                    <td data-label="Lawful basis">Our legitimate interest in running a secure website</td>
                   </tr>
                 </tbody>
               </table>

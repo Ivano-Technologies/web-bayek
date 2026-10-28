@@ -398,6 +398,13 @@ button.btn:disabled{opacity:.65;cursor:wait}
   .legal{padding:var(--s-8) 0 var(--s-9)}
   .legal-head{margin-bottom:var(--s-6)}
   .legal-body h2{margin-top:var(--s-6)}
+  .legal-table{overflow-x:visible}
+  .legal-table table{min-width:0}
+  .legal-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+  .legal-table tr{display:block;padding:var(--s-4) 0;border-bottom:1px solid var(--grey-200)}
+  .legal-table td{display:block;padding:0;border:0}
+  .legal-table td+td{margin-top:var(--s-3)}
+  .legal-table td::before{content:attr(data-label);display:block;font-size:var(--fs-eyebrow);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--grey-600);font-weight:var(--w-semi);margin-bottom:.15rem}
 }
 
 /* footer legal links, form privacy notice */
