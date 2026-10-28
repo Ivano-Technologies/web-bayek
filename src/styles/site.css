@@ -377,3 +377,37 @@ button.btn:disabled{opacity:.65;cursor:wait}
 .form-status.err{color:var(--con-red)}
 .not-found .actions{display:flex;gap:var(--s-4);flex-wrap:wrap;margin-top:var(--s-7)}
 .not-found .display{max-width:10em;text-wrap:balance}
+
+/* legal pages: privacy notice and terms of use */
+.legal{padding:var(--s-9) 0 var(--s-10)}
+.legal-head{max-width:46rem;padding-bottom:var(--s-6);margin-bottom:var(--s-7);border-bottom:2px solid var(--ink)}
+.legal-date{margin-top:var(--s-4);font-size:var(--fs-small);color:var(--grey-700)}
+.legal-body{max-width:46rem;color:var(--grey-900)}
+.legal-body h2{font-size:var(--fs-h3);line-height:1.25;color:var(--ink);margin:var(--s-7) 0 var(--s-4)}
+.legal-body h2:first-child{margin-top:0}
+.legal-body ul{margin:var(--s-4) 0 0 1.25rem}
+.legal-body li+li{margin-top:var(--s-3)}
+.legal-body ul+p,.legal-table+p{margin-top:var(--s-4)}
+.legal-body strong{font-weight:var(--w-semi);color:var(--ink)}
+.legal-body a{color:var(--ink);text-underline-offset:3px;overflow-wrap:anywhere}
+.legal-table{margin-top:var(--s-4);overflow-x:auto;border-top:2px solid var(--ink)}
+.legal-table table{width:100%;min-width:640px;border-collapse:collapse;font-size:.9375rem;line-height:1.55}
+.legal-table th,.legal-table td{text-align:left;vertical-align:top;padding:var(--s-3) var(--s-4) var(--s-3) 0;border-bottom:1px solid var(--grey-200)}
+.legal-table th{font-size:var(--fs-eyebrow);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--grey-600);font-weight:var(--w-semi)}
+@media (max-width:760px){
+  .legal{padding:var(--s-8) 0 var(--s-9)}
+  .legal-head{margin-bottom:var(--s-6)}
+  .legal-body h2{margin-top:var(--s-6)}
+  .legal-table{overflow-x:visible}
+  .legal-table table{min-width:0}
+  .legal-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+  .legal-table tr{display:block;padding:var(--s-4) 0;border-bottom:1px solid var(--grey-200)}
+  .legal-table td{display:block;padding:0;border:0}
+  .legal-table td+td{margin-top:var(--s-3)}
+  .legal-table td::before{content:attr(data-label);display:block;font-size:var(--fs-eyebrow);letter-spacing:var(--ls-eyebrow);text-transform:uppercase;color:var(--grey-600);font-weight:var(--w-semi);margin-bottom:.15rem}
+}
+
+/* footer legal links, form privacy notice */
+.foot-links{display:flex;gap:var(--s-5);flex-wrap:wrap}
+.form-privacy{font-size:var(--fs-small);color:var(--grey-700);margin-top:var(--s-4)}
+.form-privacy a{color:var(--ink);text-underline-offset:3px}
