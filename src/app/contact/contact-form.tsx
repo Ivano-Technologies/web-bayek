@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useActionState } from "react";
 import { sendEnquiry, type ContactState } from "./actions";
 
@@ -51,6 +52,10 @@ export function ContactForm() {
       <button className="btn" type="submit" disabled={pending}>
         Send enquiry
       </button>
+      <p className="form-privacy">
+        We use your details only to reply to you. See our{" "}
+        <Link href="/privacy">privacy notice</Link>.
+      </p>
       {state.status === "ok" ? (
         <p className="form-status ok" role="status">
           Thank you. Your message has been sent.

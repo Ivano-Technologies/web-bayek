@@ -10,6 +10,8 @@ Bayek Integrated Services Ltd and Bayek Construction, two Abuja companies.
 - `/integrated-services` Bayek Integrated Services
 - `/construction` Bayek Construction
 - `/contact` Contact and enquiry form
+- `/privacy` Privacy notice
+- `/terms` Terms of use
 
 `/about` permanently redirects to `/`.
 
