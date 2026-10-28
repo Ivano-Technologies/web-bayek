@@ -109,8 +109,7 @@ export default function PrivacyPage() {
               </li>
               <li>
                 <strong>Resend</strong> delivers contact form messages to our
-                team inbox (sent from reply@bayek.org), using its United States
-                (us-east-1) sending region.
+                team inbox, using its United States (us-east-1) sending region.
               </li>
               <li>
                 <strong>Zoho Corporation</strong> hosts our team mailboxes in its
