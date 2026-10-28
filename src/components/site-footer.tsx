@@ -39,7 +39,11 @@ export function SiteFooter() {
           <span>
             General enquiries <a href="mailto:hi@bayek.org">hi@bayek.org</a>
           </span>
-          <Link href="/contact">Contact</Link>
+          <nav className="foot-links" aria-label="Site information">
+            <Link href="/contact">Contact</Link>
+            <Link href="/privacy">Privacy</Link>
+            <Link href="/terms">Terms</Link>
+          </nav>
         </div>
       </div>
     </footer>
