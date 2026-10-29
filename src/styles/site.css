@@ -72,7 +72,7 @@ p+p{margin-top:1em}
 
 /* home: one Bayek */
 .home-hero{padding:var(--s-9) 0 var(--s-8)}
-.home-line{font-size:var(--fs-h1);line-height:var(--lh-tight);letter-spacing:-.02em;font-weight:var(--w-semi);max-width:15em;margin-bottom:var(--s-6)}
+.home-line{font-size:var(--fs-h1);line-height:var(--lh-tight);letter-spacing:-.02em;font-weight:var(--w-semi);max-width:15em;margin-bottom:var(--s-6);text-wrap:balance}
 .home-hero .lead{max-width:34em}
 .home-what{padding:0 0 var(--s-10)}
 .what-ey{margin-bottom:var(--s-5)}
