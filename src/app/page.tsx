@@ -20,7 +20,7 @@ export default function HomePage() {
         <BayekLoop className="loop-hero" variant="hero" />
         <div className="wrap">
           <h1 className="home-line">
-            Contracts, supply, design and construction, delivered from Abuja.
+            Contracts, supply, design and construction, delivered end&nbsp;to&nbsp;end.
           </h1>
           <p className="lead">
             Bayek serves clients across Nigeria, from general contracts,
