@@ -6,7 +6,7 @@ export default function manifest(): MetadataRoute.Manifest {
     short_name: "Bayek",
     start_url: "/",
     display: "browser",
-    theme_color: "#76A61E",
+    theme_color: "#060708",
     background_color: "#ffffff",
     icons: [
       {
