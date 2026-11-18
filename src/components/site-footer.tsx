@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CookieSettingsButton } from "@/components/analytics";
 import { BayekLoop } from "@/components/bayek-loop";
 
 export function SiteFooter() {
@@ -43,6 +44,7 @@ export function SiteFooter() {
             <Link href="/contact">Contact</Link>
             <Link href="/privacy">Privacy</Link>
             <Link href="/terms">Terms</Link>
+            <CookieSettingsButton />
           </nav>
         </div>
       </div>
