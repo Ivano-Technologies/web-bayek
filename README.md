@@ -42,6 +42,7 @@ Copy `.env.example` to `.env.local` and set values locally. Do not commit secret
 | --- | --- |
 | `RESEND_API_KEY` | Resend API key used by the contact form on the server. If unset, the form runs in dry-run mode. |
 | `CONTACT_DRY_RUN` | Set to `true` to force dry-run even when `RESEND_API_KEY` is present. The server logs the routed recipient and returns success without sending. |
+| `NEXT_PUBLIC_GA_MEASUREMENT_ID` | GA4 Measurement ID. If unset, analytics is a no-op and the cookie notice is not shown. The gtag script loads only after the visitor accepts. |
 
 Recipient addresses are chosen on the server from the form `topic` value. They are not sent to the browser.
 

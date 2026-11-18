@@ -1,5 +1,6 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Montserrat } from "next/font/google";
+import { Analytics } from "@/components/analytics";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -8,6 +9,10 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  viewportFit: "cover",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://bayek.org"),
@@ -18,6 +23,14 @@ export const metadata: Metadata = {
   description:
     "Bayek is an Abuja business covering contracts and supply, and design and construction, for clients across Nigeria.",
   applicationName: "Bayek",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "16x16 32x32 48x48", type: "image/x-icon" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+  },
   openGraph: {
     type: "website",
     locale: "en_NG",
@@ -36,7 +49,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-NG" className={montserrat.variable}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
