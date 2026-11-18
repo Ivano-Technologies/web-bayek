@@ -101,8 +101,16 @@ export function loadGoogleAnalytics(
 
   const gaWindow = win as GaWindow;
   gaWindow.dataLayer = gaWindow.dataLayer || [];
-  gaWindow.gtag = function gtag(...args: unknown[]) {
-    gaWindow.dataLayer.push(args);
+  // Must be a regular function using `arguments`: gtag.js ignores Arrays, and a
+  // rest parameter is a real Array. Official stub:
+  // function gtag(){ dataLayer.push(arguments) }
+  gaWindow.gtag = function gtag(
+    // Rest args exist only to match the gtag type; do not push them.
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars -- signature only; push `arguments`
+    ..._args: unknown[]
+  ) {
+    // eslint-disable-next-line prefer-rest-params -- gtag.js requires the Arguments object
+    gaWindow.dataLayer.push(arguments);
   };
   gaWindow.gtag("js", new Date());
   gaWindow.gtag("config", measurementId, {

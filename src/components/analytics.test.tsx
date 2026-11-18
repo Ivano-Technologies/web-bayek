@@ -6,6 +6,7 @@ import {
   CONSENT_STORAGE_KEY,
   gaScriptUrl,
   getMeasurementId,
+  loadGoogleAnalytics,
   withdrawGoogleAnalytics,
 } from "@/lib/analytics";
 import { Analytics, CookieSettingsButton } from "./analytics";
@@ -74,6 +75,17 @@ describe("Analytics", () => {
     });
     expect(screen.queryByRole("region", { name: "Cookie notice" })).toBeNull();
     expect(localStorage.getItem(CONSENT_STORAGE_KEY)).toBe("accepted");
+  });
+
+  test("gtag stub pushes an arguments object, not an Array", () => {
+    loadGoogleAnalytics(TEST_ID);
+
+    const dataLayer = (window as unknown as { dataLayer: unknown[] }).dataLayer;
+    expect(dataLayer.length).toBeGreaterThan(0);
+    for (const entry of dataLayer) {
+      expect(Object.prototype.toString.call(entry)).toBe("[object Arguments]");
+      expect(Array.isArray(entry)).toBe(false);
+    }
   });
 
   test("does not request GA on Decline", async () => {
