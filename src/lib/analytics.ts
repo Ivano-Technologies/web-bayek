@@ -51,6 +51,45 @@ export function subscribeCookieSettings(onOpen: () => void): () => void {
   return () => window.removeEventListener(COOKIE_SETTINGS_EVENT, onOpen);
 }
 
+/** Remove _ga and _ga_* cookies on this host and its parent domains. */
+export function clearAnalyticsCookies(win: Window = window): void {
+  const names = win.document.cookie
+    .split(";")
+    .map((part) => part.split("=")[0]?.trim() ?? "")
+    .filter((name) => name === "_ga" || name.startsWith("_ga_"));
+  if (names.length === 0) {
+    return;
+  }
+  const labels = win.location.hostname.split(".");
+  const domains: string[] = [""];
+  for (let i = 0; i < labels.length - 1; i += 1) {
+    const suffix = labels.slice(i).join(".");
+    domains.push(`; domain=${suffix}`);
+    domains.push(`; domain=.${suffix}`);
+  }
+  for (const name of names) {
+    for (const domain of domains) {
+      win.document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/${domain}`;
+    }
+  }
+}
+
+export function disableGoogleAnalytics(
+  measurementId: string,
+  win: Window = window,
+): void {
+  if (!measurementId) return;
+  Reflect.set(win, `ga-disable-${measurementId}`, true);
+}
+
+export function withdrawGoogleAnalytics(
+  measurementId: string,
+  win: Window = window,
+): void {
+  clearAnalyticsCookies(win);
+  disableGoogleAnalytics(measurementId, win);
+}
+
 export function loadGoogleAnalytics(
   measurementId: string,
   win: Window = window,

@@ -6,6 +6,7 @@ import {
   CONSENT_STORAGE_KEY,
   gaScriptUrl,
   getMeasurementId,
+  withdrawGoogleAnalytics,
 } from "@/lib/analytics";
 import { Analytics, CookieSettingsButton } from "./analytics";
 
@@ -34,10 +35,20 @@ afterEach(() => {
   localStorage.clear();
   document.documentElement.classList.remove("cookie-banner-open");
   document.documentElement.style.removeProperty("--cookie-banner-height");
+  document.cookie.split(";").forEach((part) => {
+    const name = part.split("=")[0]?.trim();
+    if (name) {
+      document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/`;
+    }
+  });
   for (const script of gaRequests()) script.remove();
-  const win = window as Window & { dataLayer?: unknown; gtag?: unknown };
+  const win = window as unknown as {
+    dataLayer?: unknown;
+    gtag?: unknown;
+  } & Record<string, unknown>;
   delete win.dataLayer;
   delete win.gtag;
+  delete win[`ga-disable-${TEST_ID}`];
 });
 
 describe("Analytics", () => {
@@ -102,7 +113,7 @@ describe("Analytics", () => {
     const user = userEvent.setup();
     render(
       <>
-        <CookieSettingsButton />
+        <CookieSettingsButton measurementId={TEST_ID} />
         <Analytics measurementId={TEST_ID} />
       </>,
     );
@@ -114,5 +125,39 @@ describe("Analytics", () => {
     expect(
       await screen.findByRole("region", { name: "Cookie notice" }),
     ).toBeTruthy();
+  });
+
+  test("hides Cookie settings when the measurement id is unset", () => {
+    render(<CookieSettingsButton measurementId="" />);
+    expect(
+      screen.queryByRole("button", { name: "Cookie settings" }),
+    ).toBeNull();
+  });
+
+  test("withdraw expires _ga cookies on host and domain variants and sets ga-disable", () => {
+    const writes: string[] = [];
+    const win = {
+      location: { hostname: "bayek.org" },
+      document: {
+        get cookie() {
+          return "_ga=GA1.1.x; _ga_TEST1=GS1.1.x; session=keep";
+        },
+        set cookie(value: string) {
+          writes.push(value);
+        },
+      },
+    };
+
+    withdrawGoogleAnalytics(TEST_ID, win as unknown as Window);
+
+    expect(writes).toEqual([
+      "_ga=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/",
+      "_ga=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=bayek.org",
+      "_ga=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=.bayek.org",
+      "_ga_TEST1=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/",
+      "_ga_TEST1=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=bayek.org",
+      "_ga_TEST1=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=.bayek.org",
+    ]);
+    expect(Reflect.get(win, `ga-disable-${TEST_ID}`)).toBe(true);
   });
 });

@@ -16,7 +16,7 @@ p+p{margin-top:1em}
 .muted{color:var(--grey-700)}
 
 /* header */
-.site-head{position:relative;z-index:5;border-bottom:1px solid var(--grey-200);background:var(--base)}
+.site-head{position:relative;z-index:5;border-bottom:1px solid var(--grey-200);background:var(--base);padding-top:env(safe-area-inset-top,0px)}
 .site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:var(--s-6);min-height:88px}
 .brand img{height:44px;width:auto}
 .brand img.mark-only{height:28px}

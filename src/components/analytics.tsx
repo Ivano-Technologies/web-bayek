@@ -3,11 +3,13 @@
 import Link from "next/link";
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import {
+  clearAnalyticsCookies,
   loadGoogleAnalytics,
   openCookieSettings,
   readStoredConsent,
   storeConsent,
   subscribeCookieSettings,
+  withdrawGoogleAnalytics,
   type Consent,
 } from "@/lib/analytics";
 
@@ -83,8 +85,13 @@ export function Analytics({
     storeConsent(window.localStorage, next);
     setChosen(next);
     setReopened(false);
-    if (previous === "accepted" && next === "declined") {
-      window.location.reload();
+    if (next === "declined") {
+      if (previous === "accepted" && measurementId) {
+        withdrawGoogleAnalytics(measurementId);
+        window.location.reload();
+        return;
+      }
+      clearAnalyticsCookies();
     }
   }
 
@@ -113,7 +120,13 @@ export function Analytics({
   );
 }
 
-export function CookieSettingsButton() {
+export function CookieSettingsButton({
+  measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim() ?? "",
+}: {
+  measurementId?: string;
+} = {}) {
+  if (!measurementId) return null;
+
   return (
     <button type="button" className="cookie-settings" onClick={openCookieSettings}>
       Cookie settings
