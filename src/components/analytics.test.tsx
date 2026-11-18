@@ -7,7 +7,7 @@ import {
   gaScriptUrl,
   getMeasurementId,
 } from "@/lib/analytics";
-import { Analytics } from "./analytics";
+import { Analytics, CookieSettingsButton } from "./analytics";
 
 vi.mock("next/link", () => ({
   default: function MockLink({
@@ -32,6 +32,8 @@ function gaRequests(): HTMLScriptElement[] {
 afterEach(() => {
   cleanup();
   localStorage.clear();
+  document.documentElement.classList.remove("cookie-banner-open");
+  document.documentElement.style.removeProperty("--cookie-banner-height");
   for (const script of gaRequests()) script.remove();
   const win = window as Window & { dataLayer?: unknown; gtag?: unknown };
   delete win.dataLayer;
@@ -84,5 +86,33 @@ describe("Analytics", () => {
     expect(gaRequests()).toHaveLength(0);
     expect(getMeasurementId(undefined)).toBe("");
     expect(getMeasurementId("  ")).toBe("");
+  });
+
+  test("Accept and Decline use the same button style", async () => {
+    render(<Analytics measurementId={TEST_ID} />);
+
+    const accept = await screen.findByRole("button", { name: "Accept" });
+    const decline = screen.getByRole("button", { name: "Decline" });
+    expect(accept.className).toBe(decline.className);
+    expect(accept.className.split(/\s+/)).toContain("btn");
+    expect(accept.className.split(/\s+/)).not.toContain("ghost");
+  });
+
+  test("Cookie settings reopens the banner after a choice", async () => {
+    const user = userEvent.setup();
+    render(
+      <>
+        <CookieSettingsButton />
+        <Analytics measurementId={TEST_ID} />
+      </>,
+    );
+
+    await user.click(await screen.findByRole("button", { name: "Accept" }));
+    expect(screen.queryByRole("region", { name: "Cookie notice" })).toBeNull();
+
+    await user.click(screen.getByRole("button", { name: "Cookie settings" }));
+    expect(
+      await screen.findByRole("region", { name: "Cookie notice" }),
+    ).toBeTruthy();
   });
 });

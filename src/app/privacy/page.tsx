@@ -157,6 +157,10 @@ export default function PrivacyPage() {
                 Hosting server logs: kept for no more than 30 days under our
                 hosting provider&apos;s published log retention limits.
               </li>
+              <li>
+                Google Analytics records: until you Decline or we delete them.
+                Google&apos;s cookies last up to 2 years.
+              </li>
             </ul>
 
             <h2>Your rights</h2>

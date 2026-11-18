@@ -1,5 +1,6 @@
 export const CONSENT_STORAGE_KEY = "bayek-analytics-consent";
 export const GA_SCRIPT_ID = "ga-gtag";
+const COOKIE_SETTINGS_EVENT = "bayek-cookie-settings";
 
 export type Consent = "accepted" | "declined";
 
@@ -39,6 +40,15 @@ export function storeConsent(
   } catch {
     // Ignore quota / private-mode failures; the in-memory choice still applies.
   }
+}
+
+export function openCookieSettings(): void {
+  window.dispatchEvent(new Event(COOKIE_SETTINGS_EVENT));
+}
+
+export function subscribeCookieSettings(onOpen: () => void): () => void {
+  window.addEventListener(COOKIE_SETTINGS_EVENT, onOpen);
+  return () => window.removeEventListener(COOKIE_SETTINGS_EVENT, onOpen);
 }
 
 export function loadGoogleAnalytics(

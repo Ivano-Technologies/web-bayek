@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Montserrat } from "next/font/google";
 import { Analytics } from "@/components/analytics";
 import "./globals.css";
@@ -9,6 +9,10 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  viewportFit: "cover",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://bayek.org"),

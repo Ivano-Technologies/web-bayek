@@ -366,7 +366,10 @@ form{background:var(--paper);padding:var(--s-7);border:1px solid var(--grey-200)
 .home-hero.ink-band>.loop-hero{top:0;right:-2%;width:min(38%,520px);transform:none;opacity:1;-webkit-mask-image:linear-gradient(to right,transparent 34%,#000 72%);mask-image:linear-gradient(to right,transparent 34%,#000 72%)}  /* fades the ribbon's left edge where it meets the headline */
 .home-hero.ink-band::after{background:linear-gradient(to bottom,rgba(31,28,25,.08) 0%,rgba(31,28,25,.15) 42%,rgba(31,28,25,.9) 74%,#1F1C19 100%)}
 @media (max-width:760px){.home-hero.ink-band>.loop-hero{width:46%;right:-14%;top:-6%}}
-@media (prefers-reduced-motion:reduce){.loop{animation:none;transition:none}}
+@media (prefers-reduced-motion:reduce){
+  .loop{animation:none;transition:none}
+  .btn::after{transition:none}
+}
 
 /* app extras: form button, honeypot, status, 404 wrap */
 button.btn{cursor:pointer;font-family:inherit}
@@ -413,11 +416,15 @@ button.btn:disabled{opacity:.65;cursor:wait}
 .form-privacy a{color:var(--ink);text-underline-offset:3px}
 
 /* cookie notice: shown only when GA is configured and no stored choice */
-.cookie-banner{position:fixed;inset:auto 0 0 0;z-index:20;background:var(--paper);border-top:1px solid var(--grey-200);color:var(--ink)}
+.cookie-banner{position:fixed;inset:auto 0 0 0;z-index:20;background:var(--paper);border-top:1px solid var(--grey-200);color:var(--ink);padding-bottom:env(safe-area-inset-bottom,0px)}
 .cookie-banner .wrap{display:flex;align-items:center;justify-content:space-between;gap:var(--s-5);padding-top:var(--s-5);padding-bottom:var(--s-5)}
 .cookie-banner p{margin:0;font-size:var(--fs-small);color:var(--grey-700);max-width:42em}
 .cookie-banner a{color:var(--ink);text-underline-offset:3px}
+.cookie-banner a:focus-visible,.cookie-banner button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 .cookie-banner-actions{display:flex;gap:var(--s-3);flex-shrink:0}
+html.cookie-banner-open body{padding-bottom:var(--cookie-banner-height,0px)}
+.foot-links button.cookie-settings{background:none;border:0;padding:0;font:inherit;color:inherit;cursor:pointer;text-underline-offset:3px}
+.foot-links button.cookie-settings:hover{text-decoration:underline}
 @media (max-width:760px){
   .cookie-banner .wrap{flex-direction:column;align-items:stretch;padding-top:var(--s-4);padding-bottom:var(--s-4)}
   .cookie-banner-actions .btn{justify-content:center}
