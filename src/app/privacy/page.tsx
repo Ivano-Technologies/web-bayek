@@ -16,7 +16,7 @@ export default function PrivacyPage() {
         <div className="wrap">
           <header className="legal-head">
             <h1>Privacy notice</h1>
-            <p className="legal-date">Last updated 28 October 2026</p>
+            <p className="legal-date">Last updated 18 November 2026</p>
           </header>
 
           <div className="legal-body">
@@ -86,6 +86,15 @@ export default function PrivacyPage() {
                     <td data-label="Why">To keep the site running and secure, and to block spam</td>
                     <td data-label="Lawful basis">Our legitimate interest in running a secure website</td>
                   </tr>
+                  <tr>
+                    <td data-label="What">
+                      Usage data such as pages viewed, device and browser type,
+                      and approximate location
+                    </td>
+                    <td data-label="When">If you accept analytics</td>
+                    <td data-label="Why">To understand how the site is used</td>
+                    <td data-label="Lawful basis">Consent</td>
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -96,9 +105,11 @@ export default function PrivacyPage() {
 
             <h2>Cookies</h2>
             <p>
-              This website does not set cookies and does not use analytics or
-              advertising trackers. If that changes we will add a cookie notice
-              and ask for your consent first.
+              Google Analytics runs only after you choose Accept on the cookie
+              notice. Google may then set cookies and record how the site is
+              used. If you choose Decline, we do not load analytics. Your choice
+              is stored in this browser. Clearing this site&apos;s data shows
+              the notice again.
             </p>
 
             <h2>Who we share it with</h2>
@@ -106,6 +117,11 @@ export default function PrivacyPage() {
               <li>
                 <strong>Vercel Inc.</strong> hosts the website and keeps its
                 server logs.
+              </li>
+              <li>
+                <strong>Google LLC</strong>, if you accept analytics. Google
+                Analytics then processes usage data. We do not use it for
+                advertising.
               </li>
               <li>
                 <strong>Resend</strong> delivers contact form messages to our
