@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
+import { getMeasurementId } from "@/lib/analytics";
 import { pageMetadata } from "@/lib/page-meta";
 
 export const metadata: Metadata = pageMetadata({
@@ -10,6 +11,8 @@ export const metadata: Metadata = pageMetadata({
 });
 
 export default function PrivacyPage() {
+  const analyticsEnabled = Boolean(getMeasurementId());
+
   return (
     <SiteShell theme="base" brand="base">
       <article className="section legal">
@@ -86,15 +89,17 @@ export default function PrivacyPage() {
                     <td data-label="Why">To keep the site running and secure, and to block spam</td>
                     <td data-label="Lawful basis">Our legitimate interest in running a secure website</td>
                   </tr>
-                  <tr>
-                    <td data-label="What">
-                      Usage data such as pages viewed, device and browser type,
-                      and approximate location
-                    </td>
-                    <td data-label="When">If you accept analytics</td>
-                    <td data-label="Why">To understand how the site is used</td>
-                    <td data-label="Lawful basis">Consent</td>
-                  </tr>
+                  {analyticsEnabled && (
+                    <tr>
+                      <td data-label="What">
+                        Usage data such as pages viewed, device and browser type,
+                        and approximate location
+                      </td>
+                      <td data-label="When">If you accept analytics</td>
+                      <td data-label="Why">To understand how the site is used</td>
+                      <td data-label="Lawful basis">Consent</td>
+                    </tr>
+                  )}
                 </tbody>
               </table>
             </div>
@@ -104,13 +109,21 @@ export default function PrivacyPage() {
             </p>
 
             <h2>Cookies</h2>
-            <p>
-              Google Analytics runs only after you choose Accept on the cookie
-              notice. Google may then set cookies and record how the site is
-              used. If you choose Decline, we do not load analytics. Your choice
-              is stored in this browser. Clearing this site&apos;s data shows
-              the notice again.
-            </p>
+            {analyticsEnabled ? (
+              <p>
+                Google Analytics runs only after you choose Accept on the cookie
+                notice. Google may then set cookies and record how the site is
+                used. If you choose Decline, we do not load analytics. Your choice
+                is stored in this browser. Clearing this site&apos;s data shows
+                the notice again.
+              </p>
+            ) : (
+              <p>
+                This website does not set cookies and does not use analytics or
+                advertising trackers. If that changes we will add a cookie notice
+                and ask for your consent first.
+              </p>
+            )}
 
             <h2>Who we share it with</h2>
             <ul>
@@ -118,11 +131,13 @@ export default function PrivacyPage() {
                 <strong>Vercel Inc.</strong> hosts the website and keeps its
                 server logs.
               </li>
-              <li>
-                <strong>Google LLC</strong>, if you accept analytics. Google
-                Analytics then processes usage data. We do not use it for
-                advertising.
-              </li>
+              {analyticsEnabled && (
+                <li>
+                  <strong>Google LLC</strong>, if you accept analytics. Google
+                  Analytics then processes usage data. We do not use it for
+                  advertising.
+                </li>
+              )}
               <li>
                 <strong>Resend</strong> delivers contact form messages to our
                 team inbox, using its United States (us-east-1) sending region.
@@ -157,10 +172,12 @@ export default function PrivacyPage() {
                 Hosting server logs: kept for no more than 30 days under our
                 hosting provider&apos;s published log retention limits.
               </li>
-              <li>
-                Google Analytics records: until you Decline or we delete them.
-                Google&apos;s cookies last up to 2 years.
-              </li>
+              {analyticsEnabled && (
+                <li>
+                  Google Analytics records: until you Decline or we delete them.
+                  Google&apos;s cookies last up to 2 years.
+                </li>
+              )}
             </ul>
 
             <h2>Your rights</h2>
